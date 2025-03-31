@@ -1,0 +1,166 @@
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  --primary: 31 100% 65%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+
+  --radius: 0.5rem;
+}
+
+/* Ionic overrides */
+ion-toolbar {
+  --background: white;
+  --color: var(--foreground);
+  --border-color: var(--border);
+}
+
+ion-content {
+  --background: #f8f8f8;
+}
+
+ion-item {
+  --background: white;
+  --border-color: var(--border);
+}
+
+ion-button {
+  --background: var(--primary);
+  --color: white;
+}
+
+ion-tab-bar {
+  --background: white;
+}
+
+ion-tab-button {
+  --color: var(--muted-foreground);
+  --color-selected: var(--primary);
+}
+
+/* @layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.centered-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.centered-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.icon {
+  margin-right: 3px;
+}
+
+.icon-medium {
+  font-size: 35px;
+}
+
+.top-space {
+  margin-top: 8px;
+}
+
+.input-top-space {
+  margin-top: 18px;
+}
+
+
+.avatar {
+  width: 60px;
+  height: 60px;
+}
+
+.flag {
+  width: auto;
+  height: 40px;
+}
+
+.photo-placeholder {
+  width: 128px;
+  height: 128px;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.input-error {
+  color: red;
+  font-size: 12px;
+}
+
+.bordered {
+  border: 1px solid #bebaba;
+  border-radius: 10px;
+}

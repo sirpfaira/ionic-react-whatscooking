@@ -1,0 +1,206 @@
+[
+  {
+    "_id": "1",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "email": "data.email",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Spaghetti Bolognese",
+    "datePosted": "2025-03-15T12:00:00Z",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg/medium",
+    "ingredients": [
+      "spaghetti",
+      "minced meat",
+      "tomato sauce",
+      "onions",
+      "garlic"
+    ],
+    "instructions": "Bring a large pot of water to a boil. Add kosher salt to the boiling water, then add the pasta. Cook according to the package instructions, about 9 minutes.\r\nIn a large skillet over medium-high heat, add the olive oil and heat until the oil starts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Add the chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste. Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil.\r\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes and more basil and serve warm.",
+    "duration": 30
+  },
+  {
+    "_id": "2",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "email": "data.email",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z",
+      "imageUrl": null
+    },
+    "title": "Chicken Curry",
+    "datePosted": "2025-03-14",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/1548772327.jpg",
+    "ingredients": [
+      "chicken",
+      "curry powder",
+      "coconut milk",
+      "onions",
+      "rice"
+    ],
+    "instructions": "Cook chicken. Prepare curry sauce. Serve over rice.",
+    "duration": 40
+  },
+  {
+    "_id": "3",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "email": "data.email",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Vegetable Stir Fry",
+    "datePosted": "2025-03-10",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg",
+    "ingredients": [
+      "mixed vegetables",
+      "soy sauce",
+      "ginger",
+      "garlic",
+      "noodles"
+    ],
+    "instructions": "https://www.themealdb.com/images/media/meals/1520084413.jpg",
+    "duration": 25
+  },
+  {
+    "_id": "4",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "email": "data.email",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Pancakes",
+    "datePosted": "2025-03-08",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg",
+    "ingredients": ["flour", "milk", "eggs", "sugar", "butter"],
+    "instructions": "Mix ingredients. Cook on a hot pan. Serve with syrup.",
+    "duration": 20
+  },
+  {
+    "_id": "5",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "email": "data.email",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Grilled Cheese Sandwich",
+    "datePosted": "2025-03-06",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/020z181619788503.jpg",
+    "ingredients": ["bread", "cheese", "butter"],
+    "instructions": "Butter bread. Grill with cheese in between. Serve warm.",
+    "duration": 10
+  },
+  {
+    "_id": "6",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "email": "data.email",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Greek Salad",
+    "datePosted": "2025-03-05",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/vptqpw1511798500.jpg",
+    "ingredients": [
+      "lettuce",
+      "tomatoes",
+      "cucumbers",
+      "feta cheese",
+      "olives"
+    ],
+    "instructions": "Chop vegetables. Mix with feta and olives. Serve cold.",
+    "duration": 15
+  },
+  {
+    "_id": "7",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "email": "data.email",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Beef Tacos",
+    "datePosted": "2025-03-03",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/wuvryu1468232995.jpg",
+    "ingredients": ["taco shells", "minced beef", "lettuce", "cheese", "salsa"],
+    "instructions": "Cook beef. Assemble tacos with fillings. Serve immediately.",
+    "duration": 20
+  },
+  {
+    "_id": "8",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "email": "data.email",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Chocolate Cake",
+    "datePosted": "2025-03-01",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/utxqpt1511639216.jpg",
+    "ingredients": ["flour", "cocoa powder", "sugar", "eggs", "butter"],
+    "instructions": "Mix ingredients. Bake. Let cool and frost.",
+    "duration": 60
+  },
+  {
+    "_id": "9",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "email": "data.email",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Sushi Rolls",
+    "datePosted": "2025-02-28",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/1549542994.jpg",
+    "ingredients": ["rice", "seaweed", "fish", "soy sauce", "avocado"],
+    "instructions": "Cook rice. Assemble rolls with fillings. Slice and serve.",
+    "duration": 50
+  },
+  {
+    "_id": "10",
+    "user": {
+      "_id": "1234567890",
+      "name": "Kai Wandinoda",
+      "imageUrl": "https://randomuser.me/api/portraits/women/0.jpg",
+      "email": "data.email",
+      "country": "BE",
+      "recipesContributed": 0,
+      "dateJoined": "2025-03-15T12:00:00Z"
+    },
+    "title": "Mushroom Soup",
+    "datePosted": "2025-02-26",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/g046bb1663960946.jpg",
+    "ingredients": ["mushrooms", "cream", "onions", "garlic", "stock"],
+    "instructions": "Cook mushrooms and onions. Blend with stock and cream. Serve warm.",
+    "duration": 35
+  }
+]
