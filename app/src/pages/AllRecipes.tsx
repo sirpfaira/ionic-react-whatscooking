@@ -87,9 +87,9 @@ const AllRecipes: React.FC = () => {
         </IonRefresher>
 
         <div className="ion-padding">
-          {recipes.length > 0 ? (
+          {recipes?.length > 0 ? (
             <div>
-              {recipes.map((recipe) => (
+              {recipes?.map((recipe) => (
                 <RecipeCard
                   key={recipe._id}
                   recipe={recipe}
@@ -134,8 +134,8 @@ const AllRecipes: React.FC = () => {
             </IonToolbar>
           </IonHeader>
           <IonContent fullscreen scrollY={true}>
-            <div className="container ion-padding-bottom">
-              <div style={{ position: "relative", paddingTop: "105px" }}>
+            <div className="column ion-padding">
+              <div style={{ position: "relative" }}>
                 <IonImg
                   src={selectedRecipe?.imageUrl}
                   alt={selectedRecipe?.title}
@@ -188,9 +188,9 @@ const AllRecipes: React.FC = () => {
                     />
                   </IonAvatar>
                   <IonLabel color={"dark"}>
-                    <h3 style={{ fontSize: "16px" }}>
+                    <p style={{ fontSize: "16px" }}>
                       {selectedRecipe?.user.name}
-                    </h3>
+                    </p>
                     <IonText color={"medium"}>
                       <p style={{ fontSize: "12px" }}>
                         Posted on {selectedRecipe?.datePosted?.substring(0, 10)}
@@ -205,16 +205,16 @@ const AllRecipes: React.FC = () => {
                     />
                   </IonRow>
                 </IonItem>
-                <h2>Ingredients</h2>
+                <h3>Ingredients</h3>
                 <ul>
                   {selectedRecipe?.ingredients.map((ingredient, index) => (
                     <li key={index}>{ingredient}</li>
                   ))}
                 </ul>
 
-                <h2>Instructions</h2>
+                <h3>Instructions</h3>
                 <div>{selectedRecipe?.instructions}</div>
-                <p></p>
+                <span style={{ color: "white" }}>Related recipes</span>
               </div>
             </div>
           </IonContent>

@@ -15,6 +15,8 @@ import {
   IonLoading,
   IonText,
   IonLabel,
+  IonRow,
+  IonImg,
 } from "@ionic/react";
 import { RouteComponentProps } from "react-router";
 import RecipeCard from "../components/RecipeCard";
@@ -22,6 +24,7 @@ import { apiService } from "../services/apiService";
 import { User, Recipe } from "../types";
 import { useAuth } from "../contexts/AuthContext";
 import { logOutOutline } from "ionicons/icons";
+import { getFlagUrl } from "../utils/helpers";
 
 interface ProfileParams {
   id: string;
@@ -110,6 +113,13 @@ const Profile: React.FC<RouteComponentProps<ProfileParams>> = ({ match }) => {
 
               <span className="subtitle top-space">{user.name}</span>
               <span>{user.country}</span>
+              <IonRow slot="end" className="ion-no-padding">
+                <IonImg
+                  src={getFlagUrl(`${user.country}`)}
+                  alt="Flag"
+                  style={{ width: "auto", height: "40px" }}
+                />
+              </IonRow>
 
               <div className="column top-space">
                 <IonLabel color={"medium"}>

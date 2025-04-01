@@ -1,36 +1,42 @@
-import React, { useState } from "react";
 import {
-  IonPage,
   IonContent,
   IonHeader,
-  IonToolbar,
+  IonPage,
   IonTitle,
-  IonButton,
+  IonToolbar,
+  IonSearchbar,
+  IonList,
+  IonImg,
+  IonText,
+  IonLoading,
 } from "@ionic/react";
-import TabBar from "../components/TabBar";
-import axios from "axios";
+import { useState } from "react";
+import { Recipe } from "../types";
+import { apiService } from "../services/apiService";
+import RecipeCard from "../components/RecipeCard";
 
 const Search: React.FC = () => {
+  const [searchResults, setSearchResults] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(false);
-  const [url, setUrl] = useState("");
 
-  const uploadImage = async (event: any) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "GaiaIonic");
-    data.append("cloud_name", "scott-bemard");
-
-    const res = await fetch(
-      "https://api.cloudinary.com/v1_1/scott-bemard/image/upload",
-      { method: "POST", body: data }
-    );
-    const uploadedImageUrl = await res.json();
-    console.log(uploadedImageUrl.url);
+  const handleSearch = async (event: CustomEvent) => {
+    const query = event.detail.value;
+    if (query && query.length > 3) {
+      try {
+        setLoading(true);
+        const data = await apiService.searchRecipes(query);
+        setSearchResults(data);
+      } catch (error) {
+        console.error("Error searching recipes:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
   };
 
+  function handleCardClick() {
+    return;
+  }
   return (
     <IonPage>
       <IonHeader>
@@ -38,12 +44,43 @@ const Search: React.FC = () => {
           <IonTitle>Search Recipes</IonTitle>
         </IonToolbar>
       </IonHeader>
-
-      <IonContent fullscreen></IonContent>
-      <div className="container">
-        <input onChange={uploadImage} id="dropzone-file" type="file" />
-      </div>
-      <TabBar />
+      <IonContent fullscreen>
+        <IonSearchbar
+          debounce={500}
+          onIonInput={handleSearch}
+          placeholder="Search by title"
+        />
+        <IonList>
+          <div className="ion-padding">
+            {searchResults?.length > 0 ? (
+              <div>
+                {searchResults?.map((recipe) => (
+                  <RecipeCard
+                    key={recipe._id}
+                    recipe={recipe}
+                    onCardClick={handleCardClick}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="container">
+                <IonImg
+                  src="/assets/empty-plate.svg"
+                  alt="No recipes"
+                  className="photo-placeholder"
+                />
+                <IonText color="medium">
+                  <h3>No recipes found</h3>
+                </IonText>
+                <IonText color="medium">
+                  <p>Try another keyword!</p>
+                </IonText>
+              </div>
+            )}
+          </div>
+          <IonLoading isOpen={loading} message="Fetching recipes..." />
+        </IonList>
+      </IonContent>
     </IonPage>
   );
 };

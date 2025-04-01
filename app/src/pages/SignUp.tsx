@@ -10,12 +10,10 @@ import {
   IonSelectOption,
   useIonRouter,
   useIonToast,
-  IonItem,
-  IonLabel,
 } from "@ionic/react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useAuth } from "../contexts/AuthContext";
 
 const SignUpSchema = z
@@ -45,9 +43,17 @@ const SignUp: React.FC = () => {
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(SignUpSchema) });
+  } = useForm({
+    resolver: zodResolver(SignUpSchema),
+    defaultValues: {
+      name: "User 1",
+      email: "user@mail.com",
+      password: "123456",
+      confirmPassword: "123456",
+      country: "Nigeria",
+    },
+  });
 
   const handleSignUp = async (data: z.infer<typeof SignUpSchema>) => {
     try {
@@ -61,7 +67,7 @@ const SignUp: React.FC = () => {
     } catch (error) {
       console.error("Registration error:", error);
       await showToast({
-        message: "User with that email already exists!",
+        message: "Registration failed!",
         duration: 3000,
       });
     } finally {
@@ -148,8 +154,8 @@ const SignUp: React.FC = () => {
                 fill="outline"
                 {...register("country")}
               >
-                {countries.map((index, country) => (
-                  <IonSelectOption key={index} value={country}>
+                {countries.map((country) => (
+                  <IonSelectOption key={country} value={country}>
                     {country}
                   </IonSelectOption>
                 ))}

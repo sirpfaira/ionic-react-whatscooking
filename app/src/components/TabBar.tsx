@@ -9,15 +9,13 @@ const TabBar: React.FC = () => {
         <IonIcon icon={home} />
         <IonLabel>Home</IonLabel>
       </IonTabButton>
-
-      <IonTabButton tab="search" href="/search">
-        <IonIcon icon={search} />
-        <IonLabel>Search</IonLabel>
-      </IonTabButton>
-
       <IonTabButton tab="add" href="/add-recipe">
         <IonIcon icon={add} />
         <IonLabel>Add Recipe</IonLabel>
+      </IonTabButton>
+      <IonTabButton tab="search" href="/search">
+        <IonIcon icon={search} />
+        <IonLabel>Search</IonLabel>
       </IonTabButton>
       <IonTabButton tab="ai" href="/ask-ai">
         <IonIcon icon={logoIonitron} />

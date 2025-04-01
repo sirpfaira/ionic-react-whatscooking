@@ -16,7 +16,7 @@ app.use(cors());
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes in milliseconds
-  max: 100, // limit each IP to 100 requests per windowMs
+  max: 10000, // limit each IP to 100 requests per windowMs
 });
 
 app.use(limiter);
@@ -37,6 +37,7 @@ app.post("/signup", async (req: Request, res: Response) => {
       res.status(400).send("Please provide all the required fields!");
     } else {
       const existingUser = await User.findOne({ email: data.email });
+      console.log(existingUser);
       if (existingUser) {
         throw new Error("User with that email already exists!");
       }
@@ -64,6 +65,7 @@ app.post("/signup", async (req: Request, res: Response) => {
       }
     }
   } catch (error: any) {
+    console.log(error?.message);
     res.status(500).send({ error: error?.message });
   }
 });
@@ -130,6 +132,12 @@ app.post(
       };
       const recipe = await Recipe.create(newRecipe);
       if (recipe) {
+        const user = await User.findById(data.userId);
+        if (user) {
+          await User.findByIdAndUpdate(data.userId, {
+            recipesContributed: user.recipesContributed + 1,
+          });
+        }
         res.send(recipe);
       } else {
         throw new Error("Could not save recipe!");
@@ -140,7 +148,7 @@ app.post(
   }
 );
 
-app.post("/ask-ai", async (req: Request, res: Response) => {
+app.post("/ask-ai", authenticate, async (req: CustomRequest, res: Response) => {
   try {
     const { message } = await req.body;
     if (!message) {
@@ -158,24 +166,51 @@ app.post("/ask-ai", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/users/:id", async (req: Request, res: Response) => {
-  try {
-    const userId = req.params.id;
-    const user = await User.findById(userId).select("-password -email");
-    if (user != null) {
-      // const foundUser = user.toObject();
-      // delete foundUser["password"];
-      // delete foundUser["email"];
-      // res.send(foundUser);
-      res.send(user);
-    } else {
-      throw new Error("No user found!");
+app.get(
+  "/users/:id",
+  authenticate,
+  async (req: CustomRequest, res: Response) => {
+    try {
+      const userId = req.params.id;
+      const user = await User.findById(userId).select("-password -email");
+      if (user != null) {
+        // const foundUser = user.toObject();
+        // delete foundUser["password"];
+        // delete foundUser["email"];
+        // res.send(foundUser);
+        res.send(user);
+      } else {
+        throw new Error("No user found!");
+      }
+    } catch (error: any) {
+      console.log("Error: ", error);
+      res.json(null);
     }
-  } catch (error: any) {
-    console.log("Error: ", error);
-    res.json(null);
   }
-});
+);
+
+app.get(
+  "/recipes/search",
+  authenticate,
+  async (req: CustomRequest, res: Response) => {
+    try {
+      const keyword = req.query.keyword;
+      if (keyword) {
+        const recipes = await Recipe.find({
+          title: { $regex: keyword, $options: "i" },
+        })
+          .populate({ path: "user", select: "name country imageUrl" })
+          .exec();
+        res.send(recipes);
+      } else {
+        throw new Error("No recipes found!");
+      }
+    } catch (error: any) {
+      console.log("Error: ", error);
+      res.json([]);
+    }
+  }
+);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

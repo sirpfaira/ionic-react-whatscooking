@@ -42,3 +42,8 @@ export interface Recipe {
   instructions: string;
   duration: number; // in minutes
 }
+
+export interface Photo {
+  filePath: string;
+  webviewPath?: string;
+}

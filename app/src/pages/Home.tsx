@@ -8,6 +8,7 @@ import AllRecipes from "./AllRecipes";
 import AskAI from "./AskAI";
 import AddRecipe from "./AddRecipe";
 import Profile from "./Profile";
+import Search from "./Search";
 
 const App: React.FC = () => (
   <IonApp>
@@ -16,6 +17,7 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           <Redirect exact path="/" to="/home" />
           <Route path="/home" render={() => <AllRecipes />} exact={true} />
+          <Route path="/search" render={() => <Search />} exact={true} />
           <Route path="/ask-ai" render={() => <AskAI />} exact={true} />
           <Route path="/add-recipe" render={() => <AddRecipe />} exact={true} />
           <Route exact path="/profile/:id" component={Profile} />

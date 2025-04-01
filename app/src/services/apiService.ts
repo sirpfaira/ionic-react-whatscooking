@@ -2,7 +2,7 @@ import axios from "axios";
 import { User, Recipe, BRecipe } from "../types";
 
 // Base URL for the backend API
-const API_URL = "http://localhost:5000"; // Change this to your server URL
+const API_URL = "http://localhost:5000";
 
 // Create axios instance with common headers
 const api = axios.create({
@@ -75,7 +75,7 @@ export const apiService = {
   },
 
   searchRecipes: async (query: string) => {
-    const response = await api.get(`/recipes/search?q=${query}`);
+    const response = await api.get(`/recipes/search?keyword=${query}`);
     return response.data;
   },
 
