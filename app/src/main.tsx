@@ -1,5 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { defineCustomElements } from "@ionic/pwa-elements/loader";
+import { StatusBar } from "@capacitor/status-bar";
+
 import App from "./App";
 import "./index.css";
 
@@ -22,3 +24,6 @@ import "@ionic/react/css/display.css";
 createRoot(document.getElementById("root")!).render(<App />);
 
 defineCustomElements(window);
+
+// Display content under transparent status bar
+StatusBar.setOverlaysWebView({ overlay: false });

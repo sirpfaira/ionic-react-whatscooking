@@ -46,13 +46,13 @@ const SignUp: React.FC = () => {
     formState: { errors },
   } = useForm({
     resolver: zodResolver(SignUpSchema),
-    defaultValues: {
-      name: "User 1",
-      email: "user@mail.com",
-      password: "123456",
-      confirmPassword: "123456",
-      country: "Nigeria",
-    },
+    // defaultValues: {
+    //   name: "User 1",
+    //   email: "user@mail.com",
+    //   password: "123456",
+    //   confirmPassword: "123456",
+    //   country: "Nigeria",
+    // },
   });
 
   const handleSignUp = async (data: z.infer<typeof SignUpSchema>) => {

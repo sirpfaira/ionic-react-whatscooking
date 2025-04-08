@@ -21,7 +21,6 @@ const TabBar: React.FC = () => {
         <IonIcon icon={logoIonitron} />
         <IonLabel>Ask AI</IonLabel>
       </IonTabButton>
-
       <IonTabButton tab="profile" href="/profile/me">
         <IonIcon icon={person} />
         <IonLabel>Profile</IonLabel>

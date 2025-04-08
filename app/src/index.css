@@ -130,7 +130,6 @@ ion-tab-button {
   margin-top: 18px;
 }
 
-
 .avatar {
   width: 60px;
   height: 60px;
@@ -163,4 +162,8 @@ ion-tab-button {
 .bordered {
   border: 1px solid #bebaba;
   border-radius: 10px;
+}
+
+ion-header {
+  padding-top: env(safe-area-inset-top);
 }

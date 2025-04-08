@@ -20,7 +20,7 @@ const SplashScreen: React.FC = () => {
       } else {
         router.push("/login", "forward", "replace");
       }
-    }, 2000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [router, authState.isAuthenticated, isLoading]);
@@ -30,14 +30,16 @@ const SplashScreen: React.FC = () => {
       <IonContent fullscreen scrollY={false} className="ion-padding">
         <div className="container">
           <IonImg
-            src="/assets/cooking-icon.svg"
+            src="/assets/logo.png"
             alt="WhatsCooking Logo"
             style={{ width: "100px", height: "100px" }}
           />
           <IonText color={"primary"} className="ion-margin-bottom">
             <h1>WhatsCooking</h1>
           </IonText>
-          <IonText>Share your culinary creations with the world</IonText>
+          <IonText className="ion-text-center">
+            Share your culinary creations with the world
+          </IonText>
         </div>
       </IonContent>
     </IonPage>

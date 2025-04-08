@@ -2,7 +2,7 @@ import axios from "axios";
 import { User, Recipe, BRecipe } from "../types";
 
 // Base URL for the backend API
-const API_URL = "http://localhost:5000";
+const API_URL = "https://ionic-react-whatscooking.onrender.com";
 
 // Create axios instance with common headers
 const api = axios.create({

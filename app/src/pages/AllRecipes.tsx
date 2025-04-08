@@ -80,7 +80,6 @@ const AllRecipes: React.FC = () => {
           <IonTitle>WhatsCooking</IonTitle>
         </IonToolbar>
       </IonHeader>
-
       <IonContent fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
           <IonRefresherContent></IonRefresherContent>

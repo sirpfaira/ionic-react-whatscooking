@@ -9,6 +9,8 @@ import {
   IonImg,
   IonText,
   IonLoading,
+  IonButtons,
+  IonBackButton,
 } from "@ionic/react";
 import { useState } from "react";
 import { Recipe } from "../types";
@@ -41,6 +43,9 @@ const Search: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/home"></IonBackButton>
+          </IonButtons>
           <IonTitle>Search Recipes</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -63,7 +68,7 @@ const Search: React.FC = () => {
                 ))}
               </div>
             ) : (
-              <div className="container">
+              <div className="centered-column">
                 <IonImg
                   src="/assets/empty-plate.svg"
                   alt="No recipes"
